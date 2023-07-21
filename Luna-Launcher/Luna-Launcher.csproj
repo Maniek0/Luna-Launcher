@@ -1,0 +1,70 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>Luna_Launcher</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>True</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <PlatformTarget>x64</PlatformTarget>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <NeutralLanguage>pl-PL</NeutralLanguage>
+    <SignAssembly>True</SignAssembly>
+    <IsPublishable>False</IsPublishable>
+    <PackageIcon>clipart2328919.png</PackageIcon>
+    <Description></Description>
+    <StartupObject>Luna_Launcher.Program</StartupObject>
+    <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+
+    <Version>1.0.0</Version>
+    <Authors>Maniek</Authors>
+
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Evets\**" />
+    <EmbeddedResource Remove="Evets\**" />
+    <None Remove="Evets\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CmlLib.Core" Version="3.3.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>
