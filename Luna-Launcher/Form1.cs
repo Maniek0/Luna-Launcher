@@ -5,6 +5,7 @@ namespace Luna_Launcher
         public MainGui()
         {
             InitializeComponent();
+            settings1.InstalingEvent += home1.updateVersions;
         }
         private void homeBtn_Click(object sender, EventArgs e)
         {

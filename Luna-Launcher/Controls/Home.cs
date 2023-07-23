@@ -1,5 +1,7 @@
 ﻿using CmlLib.Core;
 using CmlLib.Core.Auth;
+using CmlLib.Core.Version;
+using CmlLib.Core.VersionLoader;
 
 namespace Luna_Launcher.Controls
 {
@@ -10,6 +12,33 @@ namespace Luna_Launcher.Controls
         {
             InitializeComponent();
             LaunchOption = new();
+
+            VersionsBox.SelectedIndexChanged += (s, e) =>
+            {
+                Properties.Settings.Default.version = VersionsBox.Text;
+                Properties.Settings.Default.Save();
+            };
+
+            updateVersions();
+        }
+        public void updateVersions()
+        {
+            DefaultVersionLoader versionLoader = new(new MinecraftPath(Properties.Settings.Default.minecraftPath));
+            var versions = versionLoader.GetVersionMetadatas();
+            foreach (var version in versions)
+            {
+                if (version.MType == MVersionType.Custom)
+                {
+                    VersionsBox.Items.Add(version.Name.ToString());
+                    Console.WriteLine(version.Name);
+                }
+            }
+
+            int index = VersionsBox.Items.IndexOf(Properties.Settings.Default.version);
+            if (index >= 0)
+            {
+                VersionsBox.SelectedIndex = index;
+            }
         }
         private async void playBtn_Click(object sender, EventArgs e)
         {

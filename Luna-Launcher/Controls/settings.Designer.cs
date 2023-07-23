@@ -40,15 +40,11 @@
             label2 = new Label();
             minimumMb = new NumericUpDown();
             button1 = new Button();
-            Versions = new ComboBox();
-            label4 = new Label();
-            button2 = new Button();
             panel1 = new Panel();
             progress = new ProgressBar();
             button3 = new Button();
             otherVersions = new ComboBox();
             label5 = new Label();
-            button4 = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)maximumMb).BeginInit();
@@ -192,47 +188,16 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // Versions
-            // 
-            Versions.DropDownStyle = ComboBoxStyle.DropDownList;
-            Versions.Location = new Point(101, 285);
-            Versions.Name = "Versions";
-            Versions.Size = new Size(138, 29);
-            Versions.TabIndex = 5;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(15, 293);
-            label4.Margin = new Padding(0);
-            label4.Name = "label4";
-            label4.Size = new Size(60, 21);
-            label4.TabIndex = 6;
-            label4.Text = "Wersja";
-            // 
-            // button2
-            // 
-            button2.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.ForeColor = SystemColors.ControlText;
-            button2.Location = new Point(245, 285);
-            button2.Name = "button2";
-            button2.Size = new Size(40, 30);
-            button2.TabIndex = 7;
-            button2.Text = "+";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
-            // 
             // panel1
             // 
             panel1.Controls.Add(progress);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(otherVersions);
             panel1.Controls.Add(label5);
-            panel1.Location = new Point(3, 320);
+            panel1.Location = new Point(3, 285);
             panel1.Name = "panel1";
             panel1.Size = new Size(345, 45);
             panel1.TabIndex = 8;
-            panel1.Visible = false;
             // 
             // progress
             // 
@@ -245,7 +210,6 @@
             // 
             // button3
             // 
-            button3.Enabled = false;
             button3.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button3.ForeColor = SystemColors.ControlText;
             button3.Location = new Point(242, 7);
@@ -267,34 +231,19 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(12, 15);
+            label5.Location = new Point(12, 10);
             label5.Margin = new Padding(0);
             label5.Name = "label5";
-            label5.Size = new Size(42, 21);
+            label5.Size = new Size(60, 21);
             label5.TabIndex = 7;
-            label5.Text = "Inne";
-            // 
-            // button4
-            // 
-            button4.ForeColor = SystemColors.ControlText;
-            button4.Location = new Point(293, 285);
-            button4.Name = "button4";
-            button4.Size = new Size(40, 30);
-            button4.TabIndex = 9;
-            button4.Text = "-";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            label5.Text = "Wersja";
             // 
             // settings
             // 
             AutoScaleDimensions = new SizeF(10F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(40, 41, 60);
-            Controls.Add(button4);
             Controls.Add(panel1);
-            Controls.Add(button2);
-            Controls.Add(label4);
-            Controls.Add(Versions);
             Controls.Add(button1);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
@@ -331,14 +280,10 @@
         private NumericUpDown minimumMb;
         private NumericUpDown maximumMb;
         private Button button1;
-        private ComboBox Versions;
-        private Label label4;
-        private Button button2;
         private Panel panel1;
         private Button button3;
         private ComboBox otherVersions;
         private Label label5;
         private ProgressBar progress;
-        private Button button4;
     }
 }

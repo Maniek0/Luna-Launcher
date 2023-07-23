@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            VersionsBox = new ComboBox();
             playBtn = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -36,6 +37,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(40, 41, 45);
+            panel1.Controls.Add(VersionsBox);
             panel1.Controls.Add(playBtn);
             panel1.Dock = DockStyle.Bottom;
             panel1.Location = new Point(0, 513);
@@ -43,6 +45,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(348, 48);
             panel1.TabIndex = 0;
+            // 
+            // VersionsBox
+            // 
+            VersionsBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            VersionsBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            VersionsBox.FormattingEnabled = true;
+            VersionsBox.Location = new Point(12, 10);
+            VersionsBox.Margin = new Padding(0);
+            VersionsBox.Name = "VersionsBox";
+            VersionsBox.Size = new Size(142, 29);
+            VersionsBox.TabIndex = 2;
             // 
             // playBtn
             // 
@@ -75,5 +88,6 @@
 
         private Panel panel1;
         private Button playBtn;
+        private ComboBox VersionsBox;
     }
 }
